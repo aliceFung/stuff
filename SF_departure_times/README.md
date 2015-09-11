@@ -12,18 +12,22 @@ basic requirements:
 -API to get public transportation times
   -specify where on map
 
-
-nextbus API: requested via js
+other things:
+- cookie?
 
 outline:
 View
 - geolocalize user on map
-- display public transportation times
+- display public transportation times as little bubbles
 - refreshes information every minute
--
-
-Model
+- lists most recent departure time first
+- ajax request to refresh list changing
 
 Controller
+- index view- geolocate, and departure times
+- show view - what was requested
+
+Model
+- not really needed because not storing anything
 
 
