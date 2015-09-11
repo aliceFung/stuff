@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
 
   root 'transits#index'
+  get 'search' => 'transits#index'
+
+  # unsure if we need this
+  # get 'search' => 'transits#show'
 
   resources :transits, only: [:index, :show]
   # The priority is based upon order of creation: first created -> highest priority.
