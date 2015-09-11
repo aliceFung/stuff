@@ -1,7 +1,4 @@
-FactoryGirl.define do  factory :direction do
-    
-  end
-  factory :stop do
+FactoryGirl.define do  factory :stop do
     
   end
   factory :route do

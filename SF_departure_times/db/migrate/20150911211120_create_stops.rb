@@ -1,7 +1,7 @@
 class CreateStops < ActiveRecord::Migration
   def change
     create_table :stops do |t|
-      t.references  :direction,      null: false
+      t.references  :route,      null: false
       t.string      :tag,        null: false
       t.string      :title,      null: false
       t.float       :latitude,   null: false
@@ -11,7 +11,7 @@ class CreateStops < ActiveRecord::Migration
     end
 
     add_index :stops, :tag, unique: :true
-    add_index :stops, :direction_id
+    add_index :stops, :route_id
     add_index :stops, [:latitude, :longitude]
   end
 end
