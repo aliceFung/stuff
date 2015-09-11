@@ -1,5 +1,5 @@
 class Stop < ActiveRecord::Base
 
-  belongs_to  :route
   belongs_to  :direction
+  delegate  :route, to: :direction
 end

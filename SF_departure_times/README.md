@@ -27,7 +27,6 @@ Controller
 - index view- geolocate, and departure times
 - show view - what was requested
 
-Model
-- not really needed because not storing anything
+Models
 
 

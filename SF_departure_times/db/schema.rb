@@ -19,9 +19,12 @@ ActiveRecord::Schema.define(version: 20150911211135) do
   create_table "directions", force: :cascade do |t|
     t.string   "tag",        null: false
     t.string   "title",      null: false
+    t.integer  "route_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  add_index "directions", ["route_id"], name: "index_directions_on_route_id", using: :btree
 
   create_table "maps", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -38,19 +41,17 @@ ActiveRecord::Schema.define(version: 20150911211135) do
   add_index "routes", ["tag"], name: "index_routes_on_tag", unique: true, using: :btree
 
   create_table "stops", force: :cascade do |t|
-    t.integer  "route_id",     null: false
+    t.integer  "direction_id", null: false
     t.string   "tag",          null: false
     t.string   "title",        null: false
     t.float    "latitude",     null: false
     t.float    "longitude",    null: false
-    t.integer  "direction_id", null: false
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
   end
 
   add_index "stops", ["direction_id"], name: "index_stops_on_direction_id", using: :btree
   add_index "stops", ["latitude", "longitude"], name: "index_stops_on_latitude_and_longitude", using: :btree
-  add_index "stops", ["route_id"], name: "index_stops_on_route_id", using: :btree
   add_index "stops", ["tag"], name: "index_stops_on_tag", unique: true, using: :btree
 
   create_table "transits", force: :cascade do |t|
