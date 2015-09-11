@@ -12,6 +12,8 @@ feature 'Departure Times' do
   xscenario 'location defaults to San Francisco if geolocation fails' do
   end
 
-  xscenario 'displays nearby departure times' do
+  xscenario 'displays nearby transportation stops' do
   end
+
+  xscenario "displays stops' departure times"
 end
