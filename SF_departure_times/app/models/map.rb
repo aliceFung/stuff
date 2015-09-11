@@ -5,7 +5,6 @@ class Map
       address = Map.address_from_ip(user_ip)
       address ||= 'San Francisco'
     end
-
     return address
   end
 
@@ -26,20 +25,19 @@ class Map
 
   def self.map_markers(locations)
     Gmaps4rails.build_markers(locations) do |location, marker|
-      marker.lat  location[:latitude]
-      marker.lng  location[:longitude]
+      marker.lat  location[:lat]
+      marker.lng  location[:lon]
       marker.infowindow location[:address] + '<br>' +
-              'Time left: '+ (location[:etd] - Time.now) +'<br>' +
-              'Time: ' + location[:etd]
+              'ETD: ' + location[:etd]+ ' minutes'
     end
   end
 
   def self.no_results(lat, lon)
 
     #create default location
-    location ={ latitutde: lat,
-                longitude: lon,
-                address: "You were looking here",
+    location ={ lat: lat,
+                lon: lon,
+                address: "You are here",
                 etd: Time.now
               }
 
