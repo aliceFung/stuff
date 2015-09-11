@@ -9,7 +9,21 @@ Create a service that gives real-time departure time for public transportation (
 
 basic requirements:
 -geolocalize user
--API to get public transporation times
+-API to get public transportation times
+  -specify where on map
+
+
+nextbus API: requested via js
 
 outline:
+View
+- geolocalize user on map
+- display public transportation times
+- refreshes information every minute
+-
+
 Model
+
+Controller
+
+

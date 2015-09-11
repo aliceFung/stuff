@@ -1,5 +1,11 @@
 source 'https://rubygems.org'
 
+#Work with map
+gem 'gmaps4rails'
+gem 'geocoder'
+
+#To store keys
+gem 'figaro'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.3'
@@ -52,6 +58,8 @@ group :development, :test do
 
   #For testing
   gem 'rspec-rails'
+  gem 'guard-rspec', require: false
+
   gem 'factory_girl_rails', '~> 4.0'
   gem 'capybara'
   gem 'launchy'
