@@ -1,0 +1,28 @@
+
+<!-- search form here -->
+<%= render partial: 'shared/search_field' %>
+
+<hr>
+
+<br>
+<div class="row">
+  <div class="col-sm-12">
+      <h3 class="text-center">
+        <% if @transits  %>
+          Showing <%= @transits.size %> results
+          <%= "near #{@origin}" %>
+        <% end %>
+      </h3>
+  </div>
+</div>
+<br>
+
+<div class="col-md-10 col-md-offset-1">
+  <!-- list all nearby results below -->
+  <%= render @transits %>
+</div>
+
+  <!-- map display with result markers here -->
+<%= render partial: 'shared/map_view', locals: {hash: @markers} %>
+<br>
+

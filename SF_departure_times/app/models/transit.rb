@@ -1,2 +1,5 @@
-class Transit < ActiveRecord::Base
+class Transit
+
+
+
 end
