@@ -7,6 +7,11 @@ gem 'geocoder'
 #To store keys
 gem 'figaro'
 
+# get/parse data
+gem 'httparty'
+# just in case, may not need this
+# gem 'mechanize', '~>2.7.2', '<2.7.3'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.3'
 # Use sqlite3 as the database for Active Record

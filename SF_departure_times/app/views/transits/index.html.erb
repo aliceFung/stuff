@@ -1,6 +1,9 @@
+<!-- testing -->
+  <%= @output %>
+
 
 <!-- search form here -->
-<%= render partial: 'shared/search_form' %>
+<%# render partial: 'shared/search_form' %>
 
 <hr>
 
@@ -19,10 +22,10 @@
 
 <div class="col-md-10 col-md-offset-1">
   <!-- list all nearby results below -->
-  <%= render @transits %>
+  <%# render @transits %>
 </div>
 
   <!-- map display with result markers here -->
-<%= render partial: 'shared/map_view', locals: {hash: @markers} %>
+<%# render partial: 'shared/map_view', locals: {hash: @markers} %>
 <br>
 

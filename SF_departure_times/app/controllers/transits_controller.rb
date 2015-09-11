@@ -1,6 +1,8 @@
 class TransitsController < ApplicationController
 
   def index
+    @output = Route.getRoutes
+
     @origin = origin
     @transits = Transit.departure_times(@origin)
     if @transits
