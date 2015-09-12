@@ -5,7 +5,8 @@ class Map
       address = Map.address_from_ip(user_ip)
       address ||= 'San Francisco'
     end
-    return address
+    coord = self.coordinates(address)
+    return coord, address
   end
 
   def self.address_from_ip(user_ip)
@@ -15,7 +16,7 @@ class Map
   end
 
 
-  #yields coordinates in format [42.700149, -74.922767]
+  #yields coordinates in format [37.7749295, -122.4194155]
   def self.coordinates(address_str)
     Geocoder.coordinates(address_str)
   end

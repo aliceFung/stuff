@@ -10,7 +10,7 @@ class CreateStops < ActiveRecord::Migration
       t.timestamps null: false
     end
 
-    add_index :stops, :tag, unique: :true
+    add_index :stops, [:route_id, :tag], unique: :true
     add_index :stops, :route_id
     add_index :stops, [:latitude, :longitude]
   end

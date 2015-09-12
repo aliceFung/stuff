@@ -1,10 +1,13 @@
 class TransitsController < ApplicationController
 
   def index
-    @output = Route.getRoutes
-
-    @origin = origin
-    @transits = Transit.departure_times(@origin)
+    @routes = Route.all
+    #with more time, ajax this options for filtering
+    @stops = Stop.all
+    @coord, @origin = origin
+    # not working yet
+    # @transits = Transit.departure_times(@coord)
+    @transits = Transit.get_stop_ETD(params[:route], params[:stop_id])
     if @transits
       @markers = Map.map_markers(@transits)
     else
@@ -24,7 +27,9 @@ class TransitsController < ApplicationController
   #sets default address for search
   #calls method to geolocate by ip if no query submitted
   def origin
-    Map.locate_user(params[:address], locate_by_ip)
+    coord, address = Map.locate_user(params[:address], locate_by_ip)
+    #address may not be the same as params, if params.blank?
+    return coord, address
   end
 
   #gets location from ip in http request

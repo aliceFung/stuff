@@ -1,1 +1,7 @@
-_
+<ul>
+  <% transits.each do |transit| %>
+    <li>
+      ETD: <%= transit[:etd] %> minutes @ <%= transit[:address] %>
+    </li>
+  <% end %>
+</ul>

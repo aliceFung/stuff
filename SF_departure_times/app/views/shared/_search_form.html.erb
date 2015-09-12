@@ -2,10 +2,10 @@
   <div class="navbar-form navbar-left" role="search" >
 
     <%= form_tag search_path, method: :get do %>
-      <%= search_field_tag :address, nil,
-      placeholder: "Enter Location", class: "form-control"%>
-      <%= search_field_tag :artist, nil,
-      placeholder: "Enter Artist", class: "form-control" %>
+      <%= search_field_tag :route, nil,
+      placeholder: "Route Tag", class: "form-control"%>
+      <%= search_field_tag :stop_id, nil,
+      placeholder: "Stop ID", class: "form-control" %>
 
       <%= submit_tag "Search", class: "btn btn-success" %>
     <% end %>

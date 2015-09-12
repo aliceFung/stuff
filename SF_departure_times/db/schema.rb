@@ -41,8 +41,8 @@ ActiveRecord::Schema.define(version: 20150911211120) do
   end
 
   add_index "stops", ["latitude", "longitude"], name: "index_stops_on_latitude_and_longitude", using: :btree
+  add_index "stops", ["route_id", "tag"], name: "index_stops_on_route_id_and_tag", unique: true, using: :btree
   add_index "stops", ["route_id"], name: "index_stops_on_route_id", using: :btree
-  add_index "stops", ["tag"], name: "index_stops_on_tag", unique: true, using: :btree
 
   create_table "transits", force: :cascade do |t|
     t.datetime "created_at", null: false

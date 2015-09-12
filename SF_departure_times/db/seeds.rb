@@ -7,3 +7,19 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 # initializing database with route and stop information
+
+Route.destroy_all
+Stop.destroy_all
+
+#getting list of routes
+Route.get_routes
+#getting stop info
+Stop.get_all_route_stops
+
+
+
+
+
+
+
+
